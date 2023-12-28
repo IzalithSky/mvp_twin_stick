@@ -10,6 +10,9 @@ var alive = true
 func _physics_process(delta):
 	if not alive:
 		return
+	
+	if player == null:
+		return
 		
 	var dir_to_player = global_position.direction_to(player.global_position)
 	velocity = dir_to_player * move_speed
