@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqtvew88gdu64"]
+
+[ext_resource type="Texture2D" uid="uid://b5y7uqsu8mjt6" path="res://resources/icon.svg" id="1_ckwfn"]
+[ext_resource type="Script" path="res://game_objects/mobs/mob.gd" id="1_xrhxh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bit5n"]
+radius = 66.1287
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_xrhxh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bit5n")
+
+[node name="graphics" type="Node2D" parent="."]
+
+[node name="alive" type="Sprite2D" parent="graphics"]
+self_modulate = Color(0.803922, 0.0705882, 0.152941, 1)
+texture = ExtResource("1_ckwfn")
+
+[node name="dead" type="Sprite2D" parent="graphics"]
+visible = false
+self_modulate = Color(0.113725, 0.113725, 0.113725, 1)
+z_index = -1
+texture = ExtResource("1_ckwfn")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -80)
+collision_mask = 3
