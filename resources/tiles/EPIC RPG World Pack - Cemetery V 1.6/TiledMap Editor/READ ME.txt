@@ -1,0 +1,5 @@
+While almost all platforms, walls and terrains used the corner set for the auto tile, Fences uses
+the edge auto tile set because it best suits tilesets with no sides(e.g. fences). So take this
+into account while drawing because it's a bit different to draw. 
+Quick tip: the mouse position determines which tile will be shown to you(e.g. if you want to go the
+right, lead your cursor to the right)
