@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqdmhxxx18yqb"]
+[gd_scene load_steps=24 format=3 uid="uid://dqdmhxxx18yqb"]
 
 [ext_resource type="Script" path="res://game_objects/player/player.gd" id="1_u8rpt"]
 [ext_resource type="Texture2D" uid="uid://w7v4vaecw31e" path="res://resources/Player/Death.png" id="2_hijfw"]
 [ext_resource type="Texture2D" uid="uid://cdfyty23pcx2e" path="res://resources/Player/Shoot.png" id="2_kvjxg"]
 [ext_resource type="Texture2D" uid="uid://b7n13u1yirf0e" path="res://resources/Player/Idle.png" id="2_ysomp"]
 [ext_resource type="Texture2D" uid="uid://h3bylr6yaxaj" path="res://resources/Player/Walk.png" id="3_fifw5"]
+[ext_resource type="Script" path="res://scripts/fsm/state_machine.gd" id="6_nnwr4"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_idle.gd" id="7_vx0ng"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dkehu"]
 radius = 15.0333
@@ -152,3 +154,10 @@ animation = &"attack"
 autoplay = "idle"
 frame = 3
 frame_progress = 1.0
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("6_nnwr4")
+starting_state = NodePath("CharacterStateIdle")
+
+[node name="CharacterStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("7_vx0ng")

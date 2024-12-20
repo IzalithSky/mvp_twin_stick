@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dqtvew88gdu64"]
+[gd_scene load_steps=44 format=3 uid="uid://dqtvew88gdu64"]
 
 [ext_resource type="Script" path="res://game_objects/mobs/mob.gd" id="1_xrhxh"]
 [ext_resource type="Texture2D" uid="uid://bv70l15k404xu" path="res://resources/Mushroom/Attack3.png" id="3_roquw"]
@@ -6,9 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://do561d1hdbwer" path="res://resources/Mushroom/Death.png" id="4_371i3"]
 [ext_resource type="Texture2D" uid="uid://7nl3qtddjg8e" path="res://resources/Mushroom/Run.png" id="5_utgdd"]
 [ext_resource type="Texture2D" uid="uid://cwrgvcnkrs0q3" path="res://resources/Mushroom/Take Hit.png" id="6_ub3e5"]
+[ext_resource type="Script" path="res://scripts/fsm/state_machine.gd" id="7_v8r7w"]
+[ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_idle.gd" id="8_aa4mv"]
+[ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_run.gd" id="9_x5hdv"]
+[ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_attack.gd" id="10_4li5r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bit5n"]
-radius = 23.3452
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpvby"]
 atlas = ExtResource("3_roquw")
@@ -262,13 +266,24 @@ script = ExtResource("1_xrhxh")
 move_speed = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_bit5n")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, -80)
-collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jm65f")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("7_v8r7w")
+starting_state = NodePath("MobStateIdle")
+
+[node name="MobStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("8_aa4mv")
+
+[node name="MobStateRun" type="Node" parent="StateMachine"]
+script = ExtResource("9_x5hdv")
+
+[node name="MobStateAttack" type="Node" parent="StateMachine"]
+script = ExtResource("10_4li5r")
+duration = 0.85
