@@ -4,8 +4,6 @@ extends Character
 @onready var ray_cast_2d = $RayCast2D
 @export var move_speed = 150
 
-var alive = true
-
 
 func _process(delta):
 	if not alive:

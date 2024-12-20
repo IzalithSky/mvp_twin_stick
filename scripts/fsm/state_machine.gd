@@ -34,6 +34,12 @@ func change_state(new_state: State) -> void:
 	current_state.enter()
 
 
+func interrupt(args: Dictionary) -> void:
+	var new_state: CharacterState = current_state.interrupt(args)
+	if new_state:
+		change_state(new_state)
+
+
 func state() -> String:
 	return current_state.state_name
 

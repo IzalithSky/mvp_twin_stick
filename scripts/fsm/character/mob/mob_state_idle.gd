@@ -10,6 +10,8 @@ var state_attack
 
 
 func _ready() -> void:
+	super()
+	
 	for node in get_parent().get_children():
 		if node is MobStateRun:
 			state_run = node

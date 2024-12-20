@@ -20,3 +20,7 @@ func process_physics(delta: float) -> State:
 
 func exit() -> void:
 	pass
+
+
+func interrupt(args: Dictionary) -> State:
+	return null

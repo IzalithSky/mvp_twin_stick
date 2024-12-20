@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dqtvew88gdu64"]
+[gd_scene load_steps=46 format=3 uid="uid://dqtvew88gdu64"]
 
 [ext_resource type="Script" path="res://game_objects/mobs/mob.gd" id="1_xrhxh"]
 [ext_resource type="Texture2D" uid="uid://bv70l15k404xu" path="res://resources/Mushroom/Attack3.png" id="3_roquw"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_idle.gd" id="8_aa4mv"]
 [ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_run.gd" id="9_x5hdv"]
 [ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_attack.gd" id="10_4li5r"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_stagger.gd" id="11_mb02g"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_dead.gd" id="12_agrc8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bit5n"]
 radius = 16.0
@@ -287,3 +289,9 @@ script = ExtResource("9_x5hdv")
 [node name="MobStateAttack" type="Node" parent="StateMachine"]
 script = ExtResource("10_4li5r")
 duration = 0.85
+
+[node name="CharacterStateStagger" type="Node" parent="StateMachine"]
+script = ExtResource("11_mb02g")
+
+[node name="CharacterStateDead" type="Node" parent="StateMachine"]
+script = ExtResource("12_agrc8")

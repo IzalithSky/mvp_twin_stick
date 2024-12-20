@@ -9,6 +9,8 @@ var state_idle
 
 
 func _ready() -> void:
+	super()
+	
 	for node in get_parent().get_children():
 		if node is MobStateIdle:
 			state_idle = node
