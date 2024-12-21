@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://ejl4ctpe1rlu"]
+
+[ext_resource type="FontFile" uid="uid://dmgtjvyjyw1nb" path="res://resources/UI/Habbo.ttf" id="1_fqb3i"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 0.588235)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="LabelAction" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fqb3i")
+theme_override_font_sizes/font_size = 32
+text = "Action name"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button1" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Input"
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Input"
+text_overrun_behavior = 3
+clip_text = true

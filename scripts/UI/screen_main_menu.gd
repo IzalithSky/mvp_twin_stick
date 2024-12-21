@@ -6,7 +6,8 @@ func on_button_play_pressed():
 
 
 func on_button_settings_pressed():
-	pass # Replace with function body.
+	var settings_scene = preload("res://scenes/settings.tscn").instantiate()
+	add_child(settings_scene)
 
 
 func on_button_exit_pressed():
