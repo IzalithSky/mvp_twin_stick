@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dqdmhxxx18yqb"]
+[gd_scene load_steps=30 format=3 uid="uid://dqdmhxxx18yqb"]
 
 [ext_resource type="Script" path="res://game_objects/player/player.gd" id="1_u8rpt"]
 [ext_resource type="Texture2D" uid="uid://w7v4vaecw31e" path="res://resources/Player/Death.png" id="2_hijfw"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://b7n13u1yirf0e" path="res://resources/Player/Idle.png" id="2_ysomp"]
 [ext_resource type="Texture2D" uid="uid://h3bylr6yaxaj" path="res://resources/Player/Walk.png" id="3_fifw5"]
 [ext_resource type="Script" path="res://scripts/fsm/state_machine.gd" id="6_nnwr4"]
-[ext_resource type="Script" path="res://scripts/fsm/character/character_state_idle.gd" id="7_vx0ng"]
+[ext_resource type="Script" path="res://scripts/fsm/character/player/player_state_run.gd" id="7_su8lw"]
+[ext_resource type="Script" path="res://scripts/fsm/character/player/player_state_idle.gd" id="8_rtfpv"]
+[ext_resource type="Script" path="res://scripts/fsm/character/player/player_state_attack.gd" id="9_qh7or"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_stagger.gd" id="10_fchba"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_dead.gd" id="11_wviyp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dkehu"]
 radius = 15.0333
@@ -66,6 +70,14 @@ region = Rect2(64, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_roe22"]
 atlas = ExtResource("3_fifw5")
 region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t38x"]
+atlas = ExtResource("2_hijfw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n047"]
+atlas = ExtResource("2_hijfw")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_byx0j"]
 animations = [{
@@ -130,6 +142,17 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t38x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n047")
+}],
+"loop": false,
+"name": &"stagger",
+"speed": 8.0
 }]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
@@ -150,14 +173,24 @@ collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_byx0j")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("6_nnwr4")
-starting_state = NodePath("CharacterStateIdle")
+starting_state = NodePath("PlayerStateIdle")
 
-[node name="CharacterStateIdle" type="Node" parent="StateMachine"]
-script = ExtResource("7_vx0ng")
+[node name="PlayerStateRun" type="Node" parent="StateMachine"]
+script = ExtResource("7_su8lw")
+
+[node name="PlayerStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("8_rtfpv")
+
+[node name="PlayerStateAttack" type="Node" parent="StateMachine"]
+script = ExtResource("9_qh7or")
+
+[node name="CharacterStateStagger" type="Node" parent="StateMachine"]
+script = ExtResource("10_fchba")
+
+[node name="CharacterStateDead" type="Node" parent="StateMachine"]
+script = ExtResource("11_wviyp")

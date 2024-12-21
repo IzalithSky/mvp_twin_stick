@@ -3,7 +3,8 @@ class_name CharacterStateStagger
 extends CharacterState
 
 
-var duration: float = 1
+@export var duration: float = .25
+
 var state_idle
 var time: float
 
