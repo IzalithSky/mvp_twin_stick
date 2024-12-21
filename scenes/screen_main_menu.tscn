@@ -1,3 +1,43 @@
-[gd_scene format=3 uid="uid://dbuqyeo61sr5n"]
+[gd_scene load_steps=4 format=3 uid="uid://dbuqyeo61sr5n"]
+
+[ext_resource type="Script" path="res://scripts/UI/screen_main_menu.gd" id="1_a8o2y"]
+[ext_resource type="Texture2D" uid="uid://2lpuvmwuabi" path="res://resources/UI/splash.png" id="1_sukdx"]
+[ext_resource type="FontFile" uid="uid://dmgtjvyjyw1nb" path="res://resources/UI/Habbo.ttf" id="2_dy17t"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_a8o2y")
+
+[node name="Splash" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("1_sukdx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 76.0
+offset_top = 254.0
+offset_right = 294.0
+offset_bottom = 394.0
+theme_override_constants/separation = 10
+
+[node name="ButtonPlay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dy17t")
+theme_override_font_sizes/font_size = 36
+text = "Play
+"
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dy17t")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+
+[node name="ButtonExit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dy17t")
+theme_override_font_sizes/font_size = 36
+text = "Exit
+"
+
+[connection signal="pressed" from="VBoxContainer/ButtonPlay" to="." method="on_button_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="on_button_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="on_button_exit_pressed"]
