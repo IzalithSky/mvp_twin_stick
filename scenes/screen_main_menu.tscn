@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbuqyeo61sr5n"]
+[gd_scene load_steps=5 format=3 uid="uid://dbuqyeo61sr5n"]
 
 [ext_resource type="Script" path="res://scripts/UI/screen_main_menu.gd" id="1_a8o2y"]
 [ext_resource type="Texture2D" uid="uid://2lpuvmwuabi" path="res://resources/UI/splash.png" id="1_sukdx"]
 [ext_resource type="FontFile" uid="uid://dmgtjvyjyw1nb" path="res://resources/UI/Habbo.ttf" id="2_dy17t"]
+[ext_resource type="AudioStream" uid="uid://dwkcmbchoy7sw" path="res://resources/Sound/DavidKBD - Spooky Pack - Spooky Playtime-07 - Abandoned Castle.ogg" id="2_jp5qb"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_a8o2y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jp5qb")
+autoplay = true
 
 [node name="Splash" type="Sprite2D" parent="."]
 position = Vector2(320, 240)
