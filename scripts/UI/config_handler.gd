@@ -65,14 +65,12 @@ func load_settings(section: String):
 	
 func set_default_keybindings():
 	InputMap.load_from_project_settings()
-	var player_preffix = ["", "p2_"] #["p1_", "p2_"]
-	for preffix in player_preffix:
-		for action in input_actions:
-			var action_name = preffix + action
-			clear_keybinding(action_name)
-			var events = InputMap.action_get_events(action_name)
-			for event in events:
-				save_keybinding(action_name, event)
+	for action in input_actions:
+		var action_name = action
+		clear_keybinding(action_name)
+		var events = InputMap.action_get_events(action_name)
+		for event in events:
+			save_keybinding(action_name, event)
 		
 	config.save(SETTINGS_FILE_PATH)
 

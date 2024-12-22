@@ -27,12 +27,9 @@ func _ready():
 		
 func create_action_list():
 	ConfigHandler.apply_keybindings_from_settings()
-	#InputMap.load_from_project_settings()
-	fill_action_list("", player1_action_list)
-	#fill_action_list("p1_", player1_action_list)
-	#fill_action_list("p2_", player2_action_list)
+	fill_action_list(player1_action_list)
 	
-func fill_action_list(prefix: String, action_list: Control):
+func fill_action_list(action_list: Control):
 	for item in action_list.get_children():
 		item.queue_free()
 	
@@ -43,7 +40,7 @@ func fill_action_list(prefix: String, action_list: Control):
 		var input_button2 = button.find_child("Button2")
 		
 		action_label.text = ConfigHandler.input_actions[action]
-		var events = InputMap.action_get_events(prefix + action)
+		var events = InputMap.action_get_events(action)
 		var event1 = null
 		if events.size() > 0:
 			event1 = events[0]
@@ -58,8 +55,8 @@ func fill_action_list(prefix: String, action_list: Control):
 		else:
 			input_button2.text = ""
 		action_list.add_child(button)
-		input_button1.pressed.connect(on_input_button_pressed.bind(prefix + action, event1, input_button1))
-		input_button2.pressed.connect(on_input_button_pressed.bind(prefix + action, event2, input_button2))
+		input_button1.pressed.connect(on_input_button_pressed.bind(action, event1, input_button1))
+		input_button2.pressed.connect(on_input_button_pressed.bind(action, event2, input_button2))
 	
 func on_input_button_pressed(action, event, clicked_button):
 	if !is_remapping:
