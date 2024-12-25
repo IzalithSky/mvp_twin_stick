@@ -7,7 +7,7 @@ var target: Character
 var magnitude: int
 var duration: float
 
-var cap: int = 2 ^ 14
+var cap: int = 16384
 var freq: int = 15
 
 var current_dmg: int = 0

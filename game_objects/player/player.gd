@@ -5,7 +5,7 @@ extends Character
 
 @onready var ray_cast_2d = $RayCast2D
 @export var move_speed = 150
-@export var damage = 600
+@export var damage = 200
 @export var tracer_duration = 0.05
 @export var tracer_width = 2
 @export var tracer_color = Color(1, 0.8, 0.2)
@@ -29,7 +29,7 @@ func shoot():
 		var char = ray_cast_2d.get_collider() as Character
 		char.take_damage(damage)
 		var ignite = StatusIgnite.new()
-		ignite.init(char, 2, 20)
+		ignite.init(char, 20, 10)
 		char.status_holer.add_status(ignite)
 	
 	create_tracer_effect()
