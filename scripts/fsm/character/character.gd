@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm : StateMachine = $StateMachine
 @onready var collider = $CollisionShape2D
+@onready var status_holer: StatusHolder = $StatusHolder
 
 var alive = true
 var hp: int
@@ -21,6 +22,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	fsm.process_physics(delta)
+	status_holer.process_physics(delta)
 
 
 func take_damage(damage: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dqtvew88gdu64"]
+[gd_scene load_steps=47 format=3 uid="uid://dqtvew88gdu64"]
 
 [ext_resource type="Script" path="res://game_objects/mobs/mob.gd" id="1_xrhxh"]
 [ext_resource type="Texture2D" uid="uid://bv70l15k404xu" path="res://resources/Mushroom/Attack3.png" id="3_roquw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_attack.gd" id="10_4li5r"]
 [ext_resource type="Script" path="res://scripts/fsm/character/character_state_stagger.gd" id="11_mb02g"]
 [ext_resource type="Script" path="res://scripts/fsm/character/character_state_dead.gd" id="12_agrc8"]
+[ext_resource type="Script" path="res://scripts/status/status_holder.gd" id="13_m6v6x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bit5n"]
 radius = 16.0
@@ -266,6 +267,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_xrhxh")
 move_speed = 300
+max_hp = 6000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
@@ -295,3 +297,6 @@ script = ExtResource("11_mb02g")
 
 [node name="CharacterStateDead" type="Node" parent="StateMachine"]
 script = ExtResource("12_agrc8")
+
+[node name="StatusHolder" type="Node" parent="."]
+script = ExtResource("13_m6v6x")

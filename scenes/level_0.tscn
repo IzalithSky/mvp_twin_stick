@@ -2555,14 +2555,17 @@ tile_set = SubResource("TileSet_0andt")
 [node name="mob" parent="character" instance=ExtResource("3_lyiu0")]
 position = Vector2(-18, 357)
 move_speed = 50
+max_hp = 6000
 
 [node name="mob2" parent="character" instance=ExtResource("3_lyiu0")]
 position = Vector2(403, 264)
 move_speed = 50
+max_hp = 6000
 
 [node name="mob3" parent="character" instance=ExtResource("3_lyiu0")]
 position = Vector2(66, 128)
 move_speed = 50
+max_hp = 6000
 
 [node name="player" parent="character" instance=ExtResource("2_xacj5")]
 position = Vector2(197, 238)

@@ -25,8 +25,12 @@ func _process(delta):
 
 
 func shoot():	
-	if ray_cast_2d.is_colliding() and ray_cast_2d.get_collider().has_method("take_damage"):
-		ray_cast_2d.get_collider().take_damage(damage)
+	if ray_cast_2d.is_colliding() and ray_cast_2d.get_collider() is Character:
+		var char = ray_cast_2d.get_collider() as Character
+		char.take_damage(damage)
+		var ignite = StatusIgnite.new()
+		ignite.init(char, 2, 20)
+		char.status_holer.add_status(ignite)
 	
 	create_tracer_effect()
 
