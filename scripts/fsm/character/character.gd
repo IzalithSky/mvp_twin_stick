@@ -28,6 +28,14 @@ func _physics_process(delta: float) -> void:
 	hp_label.text = str(hp)
 
 
+func get_info() -> Dictionary:
+	return {
+		"name": name,
+		"hp": hp,
+		"max_hp": max_hp,
+		"statuses": []
+	}
+
 func take_damage(damage: int) -> void:
 	hp -= damage
 	

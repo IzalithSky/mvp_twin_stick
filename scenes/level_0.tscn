@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=4 uid="uid://de1i13thm2xqk"]
+[gd_scene load_steps=33 format=4 uid="uid://de1i13thm2xqk"]
 
 [ext_resource type="PackedScene" uid="uid://dqdmhxxx18yqb" path="res://game_objects/player/player.tscn" id="2_xacj5"]
 [ext_resource type="PackedScene" uid="uid://dqtvew88gdu64" path="res://game_objects/mobs/mob.tscn" id="3_lyiu0"]
+[ext_resource type="PackedScene" uid="uid://b0yfblwdcsu0g" path="res://scenes/HUD.tscn" id="4_3iu75"]
 [ext_resource type="Texture2D" uid="uid://bogpngx6584al" path="res://resources/tiles/EPIC RPG World Pack - Cemetery V 1.6/Tilesets/Tileset-Terrain.png" id="4_kubv8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tw53q"]
@@ -2544,6 +2545,8 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_3me1e")
 
 [node name="Level0" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("4_3iu75")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(18, 96)

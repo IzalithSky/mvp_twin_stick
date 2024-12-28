@@ -302,6 +302,7 @@ script = ExtResource("12_agrc8")
 script = ExtResource("13_m6v6x")
 
 [node name="HPLabel" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -30.0
 offset_right = 20.0
