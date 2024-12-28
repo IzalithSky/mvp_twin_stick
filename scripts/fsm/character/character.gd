@@ -31,6 +31,10 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage: int) -> void:
 	hp -= damage
 	
+	var damage_number = preload("res://scenes/DamageNumber.tscn").instantiate()
+	get_parent().add_child(damage_number)
+	damage_number.show_damage(damage, global_position, Color.ORANGE)
+	
 	if hp <= 0:
 		kill()
 		return
