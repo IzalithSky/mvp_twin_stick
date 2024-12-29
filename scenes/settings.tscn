@@ -229,18 +229,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_664ft")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer"]
 tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAACAAEAAAABAAAAAAACAAIAAAABAAEAAAARAAwAAAABAAEAAAARAA0AAAABAAIAAAASAAwAAAACAAEAAAASAA0AAAACAAIAAAARAAEAAAABAAAAAAARAAIAAAABAAEAAAASAAEAAAACAAAAAAASAAIAAAACAAEAAAABAAwAAAAAAAEAAAABAA0AAAAAAAIAAAACAAwAAAABAAEAAAACAA0AAAABAAIAAAADAAEAAAABAAAAAAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAHAAEAAAABAAAAAAAIAAEAAAABAAAAAAAJAAEAAAABAAAAAAAKAAEAAAABAAAAAAALAAEAAAABAAAAAAAMAAEAAAABAAAAAAANAAEAAAABAAAAAAAOAAEAAAABAAAAAAAPAAEAAAABAAAAAAAQAAEAAAABAAAAAAADAA0AAAABAAIAAAAEAA0AAAABAAIAAAAFAA0AAAABAAIAAAAGAA0AAAABAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAOAA0AAAABAAIAAAAPAA0AAAABAAIAAAAQAA0AAAABAAIAAAASAAMAAAACAAEAAAASAAQAAAACAAEAAAASAAUAAAACAAEAAAASAAYAAAACAAEAAAASAAcAAAACAAEAAAASAAgAAAACAAEAAAASAAkAAAACAAEAAAASAAoAAAACAAEAAAASAAsAAAACAAEAAAABAAMAAAAAAAEAAAABAAQAAAAAAAEAAAABAAUAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAABAAgAAAAAAAEAAAABAAkAAAAAAAEAAAABAAoAAAAAAAEAAAABAAsAAAAAAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAACAAcAAAABAAEAAAACAAgAAAABAAEAAAACAAkAAAABAAEAAAACAAoAAAABAAEAAAACAAsAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAADAAYAAAABAAEAAAADAAcAAAABAAEAAAADAAgAAAABAAEAAAADAAkAAAABAAEAAAADAAoAAAABAAEAAAADAAsAAAABAAEAAAADAAwAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAEAAgAAAABAAEAAAAEAAkAAAABAAEAAAAEAAoAAAABAAEAAAAEAAsAAAABAAEAAAAEAAwAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAFAAcAAAABAAEAAAAFAAgAAAABAAEAAAAFAAkAAAABAAEAAAAFAAoAAAABAAEAAAAFAAsAAAABAAEAAAAFAAwAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAGAAcAAAABAAEAAAAGAAgAAAABAAEAAAAGAAkAAAABAAEAAAAGAAoAAAABAAEAAAAGAAsAAAABAAEAAAAGAAwAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAABAAEAAAAHAAkAAAABAAEAAAAHAAoAAAABAAEAAAAHAAsAAAABAAEAAAAHAAwAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAAIAAgAAAABAAEAAAAIAAkAAAABAAEAAAAIAAoAAAABAAEAAAAIAAsAAAABAAEAAAAIAAwAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAABAAEAAAAJAAsAAAABAAEAAAAJAAwAAAABAAEAAAAKAAIAAAABAAEAAAAKAAMAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAABAAEAAAAKAAYAAAABAAEAAAAKAAcAAAABAAEAAAAKAAgAAAABAAEAAAAKAAkAAAABAAEAAAAKAAoAAAABAAEAAAAKAAsAAAABAAEAAAAKAAwAAAABAAEAAAALAAIAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAEAAAALAAgAAAABAAEAAAALAAkAAAABAAEAAAALAAoAAAABAAEAAAALAAsAAAABAAEAAAALAAwAAAABAAEAAAAMAAIAAAABAAEAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAABAAEAAAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAANAAIAAAABAAEAAAANAAMAAAABAAEAAAANAAQAAAABAAEAAAANAAUAAAABAAEAAAANAAYAAAABAAEAAAANAAcAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAANAAwAAAABAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAABAAEAAAAOAAUAAAABAAEAAAAOAAYAAAABAAEAAAAOAAcAAAABAAEAAAAOAAgAAAABAAEAAAAOAAkAAAABAAEAAAAOAAoAAAABAAEAAAAOAAsAAAABAAEAAAAOAAwAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAEAAAAPAAsAAAABAAEAAAAPAAwAAAABAAEAAAAQAAIAAAABAAEAAAAQAAMAAAABAAEAAAAQAAQAAAABAAEAAAAQAAUAAAABAAEAAAAQAAYAAAABAAEAAAAQAAcAAAABAAEAAAAQAAgAAAABAAEAAAAQAAkAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAAQAAwAAAABAAEAAAARAAMAAAABAAEAAAARAAQAAAABAAEAAAARAAUAAAABAAEAAAARAAYAAAABAAEAAAARAAcAAAABAAEAAAARAAgAAAABAAEAAAARAAkAAAABAAEAAAARAAoAAAABAAEAAAARAAsAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_3gw2k")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 2
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
 offset_left = 36.0
 offset_top = 34.0
 offset_right = 604.0
 offset_bottom = 443.0
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -249,18 +250,18 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 10
 
-[node name="SettingsContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+[node name="SettingsContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="VideoLabel" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="VideoLabel" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 text = "Window
 "
 label_settings = SubResource("LabelSettings_7crbw")
 
-[node name="MobileCheckBox" type="CheckBox" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="MobileCheckBox" type="CheckBox" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 visible = false
 custom_minimum_size = Vector2(230, 0)
 layout_direction = 3
@@ -271,7 +272,7 @@ theme_override_font_sizes/font_size = 24
 text = "Mobile Controls"
 alignment = 2
 
-[node name="FullscreenCheckBox" type="CheckBox" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="FullscreenCheckBox" type="CheckBox" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 custom_minimum_size = Vector2(230, 0)
 layout_direction = 3
 layout_mode = 2
@@ -282,55 +283,55 @@ button_pressed = true
 text = "Windowed Fullscreen"
 alignment = 2
 
-[node name="AudioLabel" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="AudioLabel" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 text = "
 Audio"
 label_settings = SubResource("LabelSettings_7crbw")
 
-[node name="MusicContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="MusicContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 
-[node name="MusicLabel" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer/MusicContainer"]
+[node name="MusicLabel" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/MusicContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0bp4i")
 theme_override_font_sizes/font_size = 22
 text = "Music volume"
 
-[node name="MusicSlider" type="HSlider" parent="ScrollContainer/MarginContainer/SettingsContainer/MusicContainer"]
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/MusicContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 100.0
 scrollable = false
 
-[node name="SFXContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="SFXContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 
-[node name="SFXLabel" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer/SFXContainer"]
+[node name="SFXLabel" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/SFXContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0bp4i")
 theme_override_font_sizes/font_size = 22
 text = "SFX volume"
 
-[node name="SFXSlider" type="HSlider" parent="ScrollContainer/MarginContainer/SettingsContainer/SFXContainer"]
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/SFXContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 100.0
 scrollable = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ControlsLabel" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer"]
+[node name="ControlsLabel" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer"]
 layout_mode = 2
 text = "
 Controls"
 label_settings = SubResource("LabelSettings_7crbw")
 
-[node name="ControlsLabel2" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer"]
+[node name="ControlsLabel2" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 1
@@ -340,22 +341,22 @@ theme_override_font_sizes/font_size = 22
 text = "Player 1"
 vertical_alignment = 2
 
-[node name="P1ActionList" type="VBoxContainer" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="P1ActionList" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ControlsLabel" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer2"]
+[node name="ControlsLabel" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer2"]
 layout_mode = 2
 text = "
 Controls"
 label_settings = SubResource("LabelSettings_7crbw")
 
-[node name="ControlsLabel2" type="Label" parent="ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer2"]
+[node name="ControlsLabel2" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -364,18 +365,17 @@ theme_override_font_sizes/font_size = 22
 text = "Player 2"
 vertical_alignment = 2
 
-[node name="P2ActionList" type="VBoxContainer" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="P2ActionList" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 visible = false
 layout_mode = 2
 
-[node name="ResetButton" type="Button" parent="ScrollContainer/MarginContainer/SettingsContainer"]
+[node name="ResetButton" type="Button" parent="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0bp4i")
 theme_override_font_sizes/font_size = 24
 text = "Reset to Defaults"
 
-[node name="BackButton" type="Button" parent="."]
-layout_mode = 0
+[node name="BackButton" type="Button" parent="CanvasLayer"]
 offset_left = 5.0
 offset_top = 5.0
 offset_right = 94.0
@@ -385,9 +385,9 @@ theme_override_font_sizes/font_size = 24
 text = "Back (esc)
 "
 
-[connection signal="toggled" from="ScrollContainer/MarginContainer/SettingsContainer/MobileCheckBox" to="." method="on_mobile_check_box_toggled"]
-[connection signal="toggled" from="ScrollContainer/MarginContainer/SettingsContainer/FullscreenCheckBox" to="." method="on_fullscreen_check_box_toggled"]
-[connection signal="value_changed" from="ScrollContainer/MarginContainer/SettingsContainer/MusicContainer/MusicSlider" to="." method="on_music_slider_value_changed"]
-[connection signal="value_changed" from="ScrollContainer/MarginContainer/SettingsContainer/SFXContainer/SFXSlider" to="." method="on_sfx_slider_value_changed"]
-[connection signal="pressed" from="ScrollContainer/MarginContainer/SettingsContainer/ResetButton" to="." method="on_reset_button_pressed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/MobileCheckBox" to="." method="on_mobile_check_box_toggled"]
+[connection signal="toggled" from="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/FullscreenCheckBox" to="." method="on_fullscreen_check_box_toggled"]
+[connection signal="value_changed" from="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/MusicContainer/MusicSlider" to="." method="on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/SFXContainer/SFXSlider" to="." method="on_sfx_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/ResetButton" to="." method="on_reset_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]

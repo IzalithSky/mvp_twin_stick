@@ -1,13 +1,13 @@
 extends Control
 
-@onready var back_button = $BackButton
-@onready var player1_action_list = $ScrollContainer/MarginContainer/SettingsContainer/P1ActionList
-@onready var player2_action_list = $ScrollContainer/MarginContainer/SettingsContainer/P2ActionList
-@onready var fullscreen_checkbox = $ScrollContainer/MarginContainer/SettingsContainer/FullscreenCheckBox
-@onready var mobile_controls_checkbox = $ScrollContainer/MarginContainer/SettingsContainer/MobileCheckBox
+@onready var back_button = $CanvasLayer/BackButton
+@onready var player1_action_list = $CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/P1ActionList
+@onready var player2_action_list = $CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/P2ActionList
+@onready var fullscreen_checkbox = $CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/FullscreenCheckBox
+@onready var mobile_controls_checkbox = $CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/MobileCheckBox
 
-@onready var music_volume_slider = $ScrollContainer/MarginContainer/SettingsContainer/MusicContainer/MusicSlider
-@onready var sfx_volume_slider = $ScrollContainer/MarginContainer/SettingsContainer/SFXContainer/SFXSlider
+@onready var music_volume_slider = $CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/MusicContainer/MusicSlider
+@onready var sfx_volume_slider = $CanvasLayer/ScrollContainer/MarginContainer/SettingsContainer/SFXContainer/SFXSlider
 
 @onready var input_button_scene = preload("res://scenes/settings_input_buttons.tscn")
 
