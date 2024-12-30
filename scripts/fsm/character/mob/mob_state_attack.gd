@@ -27,7 +27,7 @@ func enter() -> void:
 func process_physics(delta: float) -> State:
 	if time <= 0:
 		if mob.player.global_position.distance_to(mob.global_position) <= mob.attack_range:
-			mob.player.take_damage(mob.damage)
+			mob.player.damage_controller.take_damage(mob.damage)
 		return state_idle
 	
 	time -= delta

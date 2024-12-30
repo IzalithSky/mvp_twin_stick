@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var fsm : StateMachine = $StateMachine
 @onready var collider = $CollisionShape2D
 @onready var status_holer: StatusHolder = $StatusHolder
+@onready var damage_controller: DamageController = $DamageController
 @onready var hp_label: Label = $HPLabel
 
 

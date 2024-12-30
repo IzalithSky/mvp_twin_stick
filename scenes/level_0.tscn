@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=4 uid="uid://de1i13thm2xqk"]
+[gd_scene load_steps=35 format=4 uid="uid://de1i13thm2xqk"]
 
 [ext_resource type="Script" path="res://scripts/level_scene.gd" id="1_m21dj"]
 [ext_resource type="PackedScene" uid="uid://dqdmhxxx18yqb" path="res://game_objects/player/player.tscn" id="2_xacj5"]
-[ext_resource type="PackedScene" uid="uid://dqtvew88gdu64" path="res://game_objects/mobs/mob.tscn" id="3_lyiu0"]
+[ext_resource type="PackedScene" uid="uid://dqtvew88gdu64" path="res://game_objects/mobs/shroom.tscn" id="3_lyiu0"]
 [ext_resource type="PackedScene" uid="uid://b0yfblwdcsu0g" path="res://scenes/HUD.tscn" id="4_3iu75"]
 [ext_resource type="Texture2D" uid="uid://bogpngx6584al" path="res://resources/tiles/EPIC RPG World Pack - Cemetery V 1.6/Tilesets/Tileset-Terrain.png" id="4_kubv8"]
+[ext_resource type="PackedScene" uid="uid://dfrnv3kph8s6a" path="res://game_objects/mobs/skeleton.tscn" id="6_jtlie"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tw53q"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -2557,18 +2558,50 @@ tile_set = SubResource("TileSet_0andt")
 
 [node name="character" type="Node" parent="."]
 
+[node name="mob4" parent="character" instance=ExtResource("6_jtlie")]
+position = Vector2(332, 132)
+move_speed = 60
+attack_range = 80
+max_hp = 2000
+stagger_dmg = 200
+
 [node name="mob" parent="character" instance=ExtResource("3_lyiu0")]
 position = Vector2(-18, 357)
 move_speed = 50
+stagger_dmg = 200
 
 [node name="mob2" parent="character" instance=ExtResource("3_lyiu0")]
 position = Vector2(403, 264)
 move_speed = 50
+stagger_dmg = 200
 
 [node name="mob3" parent="character" instance=ExtResource("3_lyiu0")]
 position = Vector2(66, 128)
 move_speed = 50
+stagger_dmg = 200
+
+[node name="mob5" parent="character" instance=ExtResource("6_jtlie")]
+position = Vector2(-82, 128)
+move_speed = 60
+attack_range = 80
+max_hp = 2000
+stagger_dmg = 200
+
+[node name="mob6" parent="character" instance=ExtResource("6_jtlie")]
+position = Vector2(332, 386)
+move_speed = 60
+attack_range = 80
+max_hp = 2000
+stagger_dmg = 200
+
+[node name="mob7" parent="character" instance=ExtResource("6_jtlie")]
+position = Vector2(548, 168)
+move_speed = 60
+attack_range = 80
+max_hp = 2000
+stagger_dmg = 200
 
 [node name="player" parent="character" instance=ExtResource("2_xacj5")]
 position = Vector2(197, 238)
 move_speed = 150
+stagger_dmg = 200

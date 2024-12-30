@@ -1,0 +1,268 @@
+[gd_scene load_steps=41 format=3 uid="uid://dfrnv3kph8s6a"]
+
+[ext_resource type="Script" path="res://game_objects/mobs/mob_skeleton.gd" id="1_errrg"]
+[ext_resource type="Texture2D" uid="uid://bxxladb0wwey7" path="res://resources/Skeleton/Attack.png" id="2_38vva"]
+[ext_resource type="Texture2D" uid="uid://b1qwv812gbo83" path="res://resources/Skeleton/Death.png" id="3_g7hrp"]
+[ext_resource type="Texture2D" uid="uid://c6ljnafon1rws" path="res://resources/Skeleton/Idle.png" id="4_lxpoy"]
+[ext_resource type="Texture2D" uid="uid://bafopgtyjb25" path="res://resources/Skeleton/Walk.png" id="5_e5n12"]
+[ext_resource type="Texture2D" uid="uid://cfg5ophrc3i2o" path="res://resources/Skeleton/Take Hit.png" id="6_wvgmh"]
+[ext_resource type="Script" path="res://scripts/fsm/state_machine.gd" id="7_db2ld"]
+[ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_idle.gd" id="8_7nnvx"]
+[ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_run.gd" id="9_r6evg"]
+[ext_resource type="Script" path="res://scripts/fsm/character/mob/mob_state_attack.gd" id="10_v0e1e"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_stagger.gd" id="11_e4b0h"]
+[ext_resource type="Script" path="res://scripts/fsm/character/character_state_dead.gd" id="12_jo6re"]
+[ext_resource type="Script" path="res://scripts/status/status_holder.gd" id="13_kkdqx"]
+[ext_resource type="Script" path="res://scripts/damage_controller.gd" id="14_v2doy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bit5n"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o11lv"]
+atlas = ExtResource("2_38vva")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4pci"]
+atlas = ExtResource("2_38vva")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdtp8"]
+atlas = ExtResource("2_38vva")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pmmn"]
+atlas = ExtResource("2_38vva")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7faa"]
+atlas = ExtResource("2_38vva")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqftf"]
+atlas = ExtResource("2_38vva")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vkih"]
+atlas = ExtResource("2_38vva")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdwos"]
+atlas = ExtResource("2_38vva")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi4ra"]
+atlas = ExtResource("3_g7hrp")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvnx1"]
+atlas = ExtResource("3_g7hrp")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxk8u"]
+atlas = ExtResource("3_g7hrp")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_areww"]
+atlas = ExtResource("3_g7hrp")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pldg"]
+atlas = ExtResource("4_lxpoy")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfev0"]
+atlas = ExtResource("4_lxpoy")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m47f2"]
+atlas = ExtResource("4_lxpoy")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1n8x"]
+atlas = ExtResource("4_lxpoy")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul0q3"]
+atlas = ExtResource("5_e5n12")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ndbl"]
+atlas = ExtResource("5_e5n12")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xojkr"]
+atlas = ExtResource("5_e5n12")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slhac"]
+atlas = ExtResource("5_e5n12")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsqii"]
+atlas = ExtResource("6_wvgmh")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu40p"]
+atlas = ExtResource("6_wvgmh")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djavr"]
+atlas = ExtResource("6_wvgmh")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxdwr"]
+atlas = ExtResource("6_wvgmh")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jm65f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o11lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4pci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdtp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pmmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7faa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqftf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vkih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdwos")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi4ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvnx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxk8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_areww")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pldg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfev0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m47f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1n8x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul0q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ndbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xojkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slhac")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsqii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu40p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djavr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxdwr")
+}],
+"loop": false,
+"name": &"stagger",
+"speed": 12.0
+}]
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_errrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_bit5n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jm65f")
+animation = &"attack"
+autoplay = "idle"
+frame = 7
+frame_progress = 1.0
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("7_db2ld")
+starting_state = NodePath("MobStateIdle")
+
+[node name="MobStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("8_7nnvx")
+
+[node name="MobStateRun" type="Node" parent="StateMachine"]
+script = ExtResource("9_r6evg")
+
+[node name="MobStateAttack" type="Node" parent="StateMachine"]
+script = ExtResource("10_v0e1e")
+duration = 0.85
+
+[node name="CharacterStateStagger" type="Node" parent="StateMachine"]
+script = ExtResource("11_e4b0h")
+
+[node name="CharacterStateDead" type="Node" parent="StateMachine"]
+script = ExtResource("12_jo6re")
+
+[node name="StatusHolder" type="Node" parent="."]
+script = ExtResource("13_kkdqx")
+
+[node name="DamageController" type="Node" parent="."]
+script = ExtResource("14_v2doy")
+
+[node name="HPLabel" type="Label" parent="."]
+visible = false
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 10
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1

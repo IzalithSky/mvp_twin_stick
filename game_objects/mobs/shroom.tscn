@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dqtvew88gdu64"]
+[gd_scene load_steps=48 format=3 uid="uid://dqtvew88gdu64"]
 
 [ext_resource type="Script" path="res://game_objects/mobs/mob.gd" id="1_xrhxh"]
 [ext_resource type="Texture2D" uid="uid://bv70l15k404xu" path="res://resources/Mushroom/Attack3.png" id="3_roquw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/fsm/character/character_state_stagger.gd" id="11_mb02g"]
 [ext_resource type="Script" path="res://scripts/fsm/character/character_state_dead.gd" id="12_agrc8"]
 [ext_resource type="Script" path="res://scripts/status/status_holder.gd" id="13_m6v6x"]
+[ext_resource type="Script" path="res://scripts/damage_controller.gd" id="14_m02qk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bit5n"]
 radius = 16.0
@@ -300,6 +301,9 @@ script = ExtResource("12_agrc8")
 
 [node name="StatusHolder" type="Node" parent="."]
 script = ExtResource("13_m6v6x")
+
+[node name="DamageController" type="Node" parent="."]
+script = ExtResource("14_m02qk")
 
 [node name="HPLabel" type="Label" parent="."]
 visible = false
