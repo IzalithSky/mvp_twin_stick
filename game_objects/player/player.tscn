@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dqdmhxxx18yqb"]
+[gd_scene load_steps=33 format=3 uid="uid://dqdmhxxx18yqb"]
 
 [ext_resource type="Script" path="res://game_objects/player/player.gd" id="1_u8rpt"]
 [ext_resource type="Texture2D" uid="uid://w7v4vaecw31e" path="res://resources/Player/Death.png" id="2_hijfw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/fsm/character/character_state_dead.gd" id="11_wviyp"]
 [ext_resource type="Script" path="res://scripts/status/status_holder.gd" id="12_rj20x"]
 [ext_resource type="Script" path="res://scripts/damage_controller.gd" id="13_62y2k"]
+[ext_resource type="Script" path="res://game_objects/weapons/weapon_hitscan.gd" id="14_g5gkv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dkehu"]
 radius = 15.0333
@@ -203,6 +204,11 @@ script = ExtResource("12_rj20x")
 [node name="DamageController" type="Node" parent="."]
 script = ExtResource("13_62y2k")
 
+[node name="WeaponHitscan" type="Node" parent="."]
+script = ExtResource("14_g5gkv")
+damage = 200
+attack_duration = 0.25
+
 [node name="HPLabel" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -30.0
@@ -210,5 +216,16 @@ offset_right = 20.0
 offset_bottom = -7.0
 theme_override_font_sizes/font_size = 10
 text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmmoLabel" type="Label" parent="."]
+offset_left = -10.0
+offset_top = -39.0
+offset_right = 11.0
+offset_bottom = -24.0
+theme_override_font_sizes/font_size = 10
+text = "0
+"
 horizontal_alignment = 1
 vertical_alignment = 1

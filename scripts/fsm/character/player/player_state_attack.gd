@@ -3,8 +3,6 @@ class_name PlayerStateAttack
 extends CharacterState
 
 
-@export var duration: float = .25
-
 @onready var player: Player = character as Player
 
 var state_idle
@@ -20,9 +18,9 @@ func _ready() -> void:
 
 
 func enter() -> void:
-	time = duration
+	time = player.current_weapon.attack_duration
 	character.anim.play("attack")
-	player.shoot()
+	player.current_weapon.attack()
 
 
 func process_physics(delta: float) -> State:

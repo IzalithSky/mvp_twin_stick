@@ -20,8 +20,11 @@ func _ready() -> void:
 
 
 func process_physics(delta: float) -> State:
-	if Input.is_action_just_pressed("shoot"):	
+	if Input.is_action_just_pressed("shoot") and player.current_weapon.is_ready:	
 		return state_attack
+	
+	if Input.is_action_just_pressed("reload"):
+		player.current_weapon.reload()
 	
 	if Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown") == Vector2.ZERO:
 		return state_idle
