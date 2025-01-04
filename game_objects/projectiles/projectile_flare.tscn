@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://svc0l83otd84"]
+
+[ext_resource type="Script" path="res://game_objects/projectiles/projectile_flare.gd" id="1_bsskf"]
+[ext_resource type="Texture2D" uid="uid://de0v125q1i0bg" path="res://resources/Flying eye/projectile_sprite.png" id="2_0urfb"]
+[ext_resource type="PackedScene" uid="uid://bnykbwqvs8b4h" path="res://game_objects/projectiles/effect_flare.tscn" id="2_ue3hy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nl4da"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmr3w"]
+atlas = ExtResource("2_0urfb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8ksj"]
+atlas = ExtResource("2_0urfb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rhij"]
+atlas = ExtResource("2_0urfb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kcms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmr3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8ksj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rhij")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="ProjectileFlare" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_bsskf")
+effect = ExtResource("2_ue3hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nl4da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1kcms")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nl4da")

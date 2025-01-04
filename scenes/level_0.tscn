@@ -2605,3 +2605,12 @@ stagger_dmg = 200
 position = Vector2(197, 238)
 move_speed = 150
 stagger_dmg = 200
+
+[node name="Label" type="Label" parent="character/player"]
+offset_left = -320.0
+offset_top = 207.0
+offset_right = 319.0
+offset_bottom = 240.0
+text = "Move [WASD] Shoot [LMB] Reload [R] Select wapon [1, 2]"
+horizontal_alignment = 1
+vertical_alignment = 1

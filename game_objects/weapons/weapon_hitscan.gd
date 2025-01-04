@@ -11,16 +11,12 @@ extends Weapon
 @onready var owner_char: Player = get_parent()
 
 
-func _attack() -> void:	
+func _attack() -> void:
 	super()
 	
 	if owner_char.ray_cast_2d.is_colliding() and owner_char.ray_cast_2d.get_collider() is Character:
 		var char = owner_char.ray_cast_2d.get_collider() as Character
-		var hdmg = char.damage_controller.take_damage(damage)
-		if hdmg > 0:
-			var ignite = StatusIgnite.new()
-			ignite.init(char, 20, 10)
-			char.status_holer.add_status(ignite)
+		char.damage_controller.take_damage(damage)
 	
 	create_tracer_effect()
 

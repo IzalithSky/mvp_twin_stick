@@ -3,14 +3,16 @@ class_name Weapon
 extends Node
 
 
-@export var maxammo: int = 6
+@export var maxammo: int = 1
 @export var ammmo_per_reload: int = 1
 @export var reload_duration: float = 1
 @export var attack_duration: float = 1
 @export var firerate: float = 1
+@export var w_name: String
+
+@onready var ammo: int = maxammo
 
 var time: float
-var ammo: int = maxammo
 var is_ready: bool = true
 
 

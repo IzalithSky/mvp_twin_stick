@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dqdmhxxx18yqb"]
+[gd_scene load_steps=35 format=3 uid="uid://dqdmhxxx18yqb"]
 
 [ext_resource type="Script" path="res://game_objects/player/player.gd" id="1_u8rpt"]
 [ext_resource type="Texture2D" uid="uid://w7v4vaecw31e" path="res://resources/Player/Death.png" id="2_hijfw"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://scripts/status/status_holder.gd" id="12_rj20x"]
 [ext_resource type="Script" path="res://scripts/damage_controller.gd" id="13_62y2k"]
 [ext_resource type="Script" path="res://game_objects/weapons/weapon_hitscan.gd" id="14_g5gkv"]
+[ext_resource type="Script" path="res://game_objects/weapons/weapon_projectile.gd" id="15_usagd"]
+[ext_resource type="PackedScene" uid="uid://svc0l83otd84" path="res://game_objects/projectiles/projectile_flare.tscn" id="16_jsypd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dkehu"]
 radius = 15.0333
@@ -206,8 +208,17 @@ script = ExtResource("13_62y2k")
 
 [node name="WeaponHitscan" type="Node" parent="."]
 script = ExtResource("14_g5gkv")
-damage = 200
+damage = 500
+maxammo = 6
 attack_duration = 0.25
+w_name = "pistol"
+
+[node name="WeaponProjectile" type="Node" parent="."]
+script = ExtResource("15_usagd")
+projectile = ExtResource("16_jsypd")
+reload_duration = 2.0
+attack_duration = 0.25
+w_name = "flare"
 
 [node name="HPLabel" type="Label" parent="."]
 offset_left = -20.0
@@ -220,10 +231,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AmmoLabel" type="Label" parent="."]
-offset_left = -10.0
-offset_top = -39.0
-offset_right = 11.0
-offset_bottom = -24.0
+offset_left = -38.0
+offset_top = -40.0
+offset_right = 37.0
+offset_bottom = -25.0
 theme_override_font_sizes/font_size = 10
 text = "0
 "
